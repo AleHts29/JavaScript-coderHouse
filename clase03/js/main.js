@@ -12,7 +12,7 @@ opcTemperature = parseInt(prompt("1- Convertir a Celsius ó 2-Convertir a Fahren
     }else if(opcTemperature == 2){
         unidadTemp = "Celsius";
     }else{
-        alert("Error: Opcion no valida")
+        alert("Error: Opción no valida")
     }
 
 
