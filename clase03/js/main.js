@@ -1,31 +1,44 @@
-const numExamenes = 3;
-const nota = 4;
-const notaMax = 10;
+
+let resultado;
+let total;
+let opcTemperature
+let unidadTemp;
+
+alert("Elija opción a la que desea convertir: ");
+opcTemperature = parseInt(prompt("1- Convertir a Celsius ó 2-Convertir a Fahrenheit: "));
+
+    if(opcTemperature == 1){
+        unidadTemp = "Fahrenheit";
+    }else if(opcTemperature == 2){
+        unidadTemp = "Celsius";
+    }else{
+        alert("Error: Opcion no valida")
+    }
 
 
-
-let myName = prompt("Ingrese su nombre");
-let lastName = prompt("Ingrese su apellido");
-
-if ((myName != "") && (lastName != "")){
-    alert("Alumno: " + myName + " " + lastName);
-}else{
-    alert("Error: Por favor ingrese Nombre y Apellido");
-}
-
-let calificacion1 = parseInt(prompt ("Ingrese calificación del primer examen: "));
-let calificacion2 = parseInt(prompt ("Ingrese calificación del segundo examen: "));
-let calificacion3 = parseInt(prompt ("Ingrese calificación del tercer examen: "));
-
-let promedio = ((calificacion1 + calificacion2 + calificacion3)/numExamenes);
+while((opcTemperature == 2)|| (opcTemperature == 1)){
+    let temperature = parseInt(prompt("Ingrese valor de Temperatura "+ "(" + unidadTemp + ")"));
+    switch(opcTemperature){
+        case 1:
+            resultado = ("CELCIUS");
+            break;    
+        default:
+            resultado = ("FAHRENHEIT");
+            break;
+    }
 
 
-if(promedio < nota){
-    alert("El alumno: " + myName + " " + lastName + ": No aprueba la asignatura, debe recursar");
-}else if((promedio >= nota) && (promedio < notaMax) ){
-    alert("El alumno: " + myName + " " + lastName +  ": Se encuentra aprobado, debe rendir final");
-}else if (promedio == notaMax){
-    alert("El alumno: " + myName + " " + lastName +  ": Se encuentra aprobado, promociona");
-}else{
-    alert("Ingreso de datos incorrecto");
+    switch(resultado){
+        case "CELCIUS":
+             total = ((temperature - 32)*(5/9)).toFixed(2);
+            alert(temperature + " grados Fahrenheit, son: " + total + " grados Celsius.");
+            break;
+        default:
+             total = (((temperature)*(5/9))+ (32)).toFixed(2);
+            alert(temperature + " grados Celsius, son: " + total + " grados Fahrenheit.");
+            break;
+    }
+    alert("Elija opción a la que desea convertir: ");
+    opcTemperature = parseInt(prompt("1- Convertir a Celsius ó 2-Convertir a Fahrenheit: "));
+
 }
