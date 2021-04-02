@@ -1,0 +1,32 @@
+body {
+    font-size: 1.3rem; }
+  
+  h1 {
+    font-size: 38px;
+    font-family: "Lato", "HelveticaNeue", "Helvetica Neue", sans-serif; }
+  
+  h2 {
+    font-size: 38px;
+    font-family: "Lato", "HelveticaNeue", "Helvetica Neue", sans-serif; }
+  
+  /* Saca bubrayado links*/
+  .non-underline-link {
+    text-decoration: none !important;
+    color: #7fc8f8; }
+  
+  .non-underline-link:hover {
+    color: #5aa9e6; }
+
+
+
+
+/*------------------------*/
+/* estilos locales pages Courses.html */
+/*------------------------*/
+
+.btn-black {
+    background: #264653; }
+  
+.btn-black:hover {
+    background: #212529; }
+  
