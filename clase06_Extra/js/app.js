@@ -22,7 +22,7 @@ const productosOrdenados_ID = productos.sort((a,b) =>{
 console.log(productosOrdenados_ID);
 
 
-//Orden bajo criterio de ID
+//Orden bajo criterio de Alfabetico
 // const productosOrdenados_Nombre = productos.sort((a,b) =>{
 //     return (a.producto < b.producto) ? -1 : 1;
 //     }
