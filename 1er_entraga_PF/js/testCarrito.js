@@ -11,7 +11,7 @@ class Producto{
     addCart(){
         if(this.addToCart == false){
             this.addToCart = true;
-            alert(`Se agrego al carrito correctamente el curso ${this.nombre}`);
+            alert(`Se agrego al carrito correctamente el ${this.nombre}`);
         }
     }
     pay(){
@@ -43,10 +43,10 @@ class Producto{
 
 //Declaro un array de productos para almacenar en objetos
 const productos = [];
-    productos.push(course1 = new Producto("1","Deep Premium Vol. 5 - Drum Sample Pack", "23"));
-    productos.push(course2 = new Producto("2","Future Bass Remix from Start to Finish in FL", "70"));
-    productos.push(course3 = new Producto("3","Woodlands Vol. 1 - Organic House", "50"));
-    productos.push(course4 = new Producto("4","Interstellar - Techno Ableton Template", "15"));
+    productos.push(course1 = new Producto("1","curso_1", "23"));
+    productos.push(course2 = new Producto("2","curso_2", "70"));
+    productos.push(course3 = new Producto("3","curso_3", "50"));
+    productos.push(course4 = new Producto("4","curso_4", "15"));
 
 
 //Se agrega el IVA a todos los cursos
@@ -98,6 +98,4 @@ while(opc != "ESC"){
 
 
 document.write(`<br>Total a pagar:  $${sumaProductos.toFixed(2)}USD`);
-
-
 
