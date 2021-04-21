@@ -19,7 +19,7 @@ let documentFragment = document.createDocumentFragment();
 for (var i = 1; i <= 15; i++){
     let idRandom = Math.round( Math.random()*10000);
     let precioRandom = Math.round( Math.random()*10+30);
-    let producto = crearProducto(`Curso ${i}`, `ID ${idRandom}`, `${precioRandom}`);
+    let producto = crearProducto(`Curso ${i}`, `ID ${idRandom}`, `${precioRandom} USD`);
     let div = document.createElement("DIV");
     div.addEventListener("click", () => {changeHidden(idRandom)});
     div.tabIndex = i;
