@@ -1,30 +1,30 @@
 const contenedor = document.querySelector(".flex-container");
+const boton = document.querySelector(".send-button");
+boton.value = boton.value.toUpperCase();
 
-function crearLlave(nombre, modelo, precio){
-    img = "<img class='llave-img' src='img/llave.png'>";
+function crearProducto(nombre, id, precio){
+    img = "<img class='producto-img' src='img/producto.png'>";
     nombre = `<h2>${nombre}</h2>`;
-    modelo = `<h3>${modelo}</h3>`;
+    id = `<h3>${id}</h3>`;
     precio = `<p>Precio: <b>$${precio}</b></p>`;
-    return [img, nombre, modelo, precio];
+    return [img, nombre, id, precio];
 }
-
 
 const changeHidden = (number)=>{
     document.querySelector(".key-data").value = number;
 }
 
-
 let documentFragment = document.createDocumentFragment();
 
-for (var i = 1; i <= 20; i++){
-    let modeloRandom = Math.round( Math.random()*10000);
+for (var i = 1; i <= 15; i++){
+    let idRandom = Math.round( Math.random()*10000);
     let precioRandom = Math.round( Math.random()*10+30);
-    let llave = crearLlave(`Llave ${i}`, `Modelo ${modeloRandom}`, `${precioRandom}`);
+    let producto = crearProducto(`Curso ${i}`, `ID ${idRandom}`, `${precioRandom}`);
     let div = document.createElement("DIV");
-    div.addEventListener("click", () => {changeHidden(modeloRandom)});
+    div.addEventListener("click", () => {changeHidden(idRandom)});
     div.tabIndex = i;
     div.classList.add(`ìtem-${i}`,'flex-item');
-    div.innerHTML = llave[0] + llave[1] + llave[2] + llave[3];
+    div.innerHTML = producto[0] + producto[1] + producto[2] + producto[3];
     documentFragment.appendChild(div);
 }
 
