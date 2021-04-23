@@ -15,8 +15,8 @@ const changeHidden = (number)=>{
 }
 
 let documentFragment = document.createDocumentFragment();
-
-for (var i = 1; i <= 15; i++){
+let numProductosToCreate = parseInt(prompt("Cargar STOCK:::Ingrese el numero de productos a crear: "))
+for (var i = 1; i <= numProductosToCreate; i++){
     let idRandom = Math.round( Math.random()*10000);
     let precioRandom = Math.round( Math.random()*10+30);
     let producto = crearProducto(`Curso ${i}`, `ID ${idRandom}`, `${precioRandom} USD`);
