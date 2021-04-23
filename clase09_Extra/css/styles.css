@@ -1,0 +1,55 @@
+
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #333;
+    font-family: sans-serif;
+}
+.flex-item{
+    flex-grow: 1;
+    margin: 20px;
+    padding: 20px;
+    max-width: 300px;
+    border: none;
+}
+.flex-item:hover{
+    border-color: rgb(222, 91, 242);
+    box-shadow: 0px 0px 15px rgb(127, 213, 211);
+}
+.flex-item:focus{
+    border: none;
+    border-color: rgb(222, 91, 242);
+    box-shadow: 0px 0px 25px rgb(21, 77, 76);
+}
+
+h2, h3{
+    margin: 0;
+}
+
+h3{
+    color:#666;
+}
+
+p b{
+    color: green;
+}
+
+.producto-img{
+    width: 300px;
+    border-radius: 20px;
+}
+
+form{
+    text-align: center;
+    padding: 50px;
+}
+input[type="submit"]{
+    background: rgb(127, 213, 211);
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
