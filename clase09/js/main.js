@@ -3,36 +3,49 @@
 //Se envia el formulario al servidor
 
 
+const nombre = document.getElementById("nombre");
+const email = document.getElementById("email");
+const materia = document.getElementById("materia");
+const boton = document.getElementById("btn-enviar");
+const resultado = document.querySelector(".resultado");
+
+boton.addEventListener("click", (evento)=>{
+    evento.preventDefault();
+
+    let error = validarCampos();
+    if(error[0]){
+        resultado.innerHTML = error[1];
+        resultado.classList.add("red");
+    }else{
+        resultado.innerHTML = "Solicitud enviada correctamente";
+        resultado.classList.add("green");
+        resultado.classList.remove("red");
+    }
+})
+
+const validarCampos = ()=>{
+    let error = [];
+    if (nombre.value.length < 4 || nombre.value.length > 30 ){
+        error[0] = true;
+        error[1] = "El nombre es invalido.";
+        return error;
+    }else if (email.value.length < 5 ||
+                email.value.length > 40 ||
+                email.value.indexOf("@") == -1 ||
+                email.value.indexOf(".") == -1 ){
+        error[0] = true;
+        error[1] = "mail invalido";
+        return error;
+    }else if(materia.value < 4 || materia.value > 30){
+        error[0] = true;
+        error[1] = "Materia no valida";
+        return error;
+    }
 
 
-const contenedor = document.querySelector(".flex-container");
-const boton = document.querySelector(".send-button");
-boton.value = boton.value.toUpperCase();
 
-function crearProducto(nombre, id, precio){
-    img = "<img class='producto-img' src='img/producto.png'>";
-    nombre = `<h2>${nombre}</h2>`;
-    id = `<h3>${id}</h3>`;
-    precio = `<p>Precio: <b>$${precio}</b></p>`;
-    return [img, nombre, id, precio];
+
+    error[0] = false;
+    return error;
+
 }
-
-const changeHidden = (number)=>{
-    document.querySelector(".key-data").value = number;
-}
-
-let documentFragment = document.createDocumentFragment();
-
-for (var i = 1; i <= 15; i++){
-    let idRandom = Math.round( Math.random()*10000);
-    let precioRandom = Math.round( Math.random()*10+30);
-    let producto = crearProducto(`Curso ${i}`, `ID ${idRandom}`, `${precioRandom} USD`);
-    let div = document.createElement("DIV");
-    div.addEventListener("click", () => {changeHidden(idRandom)});
-    div.tabIndex = i;
-    div.classList.add(`ìtem-${i}`,'flex-item');
-    div.innerHTML = producto[0] + producto[1] + producto[2] + producto[3];
-    documentFragment.appendChild(div);
-}
-
-contenedor.appendChild(documentFragment);

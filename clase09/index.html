@@ -8,15 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="flex-container">
-
-    </div>
-    <form >
+    <form autocomplete="off">
         <h2>Inscripción a Recuperatorio</h2>
-        <input type="text" placeholder="Nombre completo" id="nombre">
-        <input type="email" placeholder="Usuario@ejemplo.com" id="email">
-        <input type="text" placeholder="Materia" id="materia">
+        <input type="text" placeholder="Nombre completo" id="nombre" required>
+        <input type="email" placeholder="Usuario@ejemplo.com" id="email" required>
+        <input type="text" placeholder="Materia" id="materia" required>
         <input type="submit"  value="Enviar"  id="btn-enviar">
+
+        <div class="resultado"></div>
     </form>
 
 <script src="js/main.js"></script>
