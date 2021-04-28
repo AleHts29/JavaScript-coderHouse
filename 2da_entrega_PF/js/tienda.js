@@ -3,6 +3,9 @@ addToShoppingCartButtons.forEach((addToCartButton) =>{
     addToCartButton.addEventListener('click', addToCartClicked);
 });
 
+const comprarButton = document.querySelector('.comprarButton');
+comprarButton.addEventListener('click', comprarButtonClicked)
+
 //indico en que parte del HTML quiero crear los elementos
 const shoppingCartItemsContainer = document.querySelector('.shoppingCartItemsContainer');
 
@@ -36,6 +39,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage){
 
         // toast de bootstrap y jQuary
         $('.toast').toast('show');
+        updateShoppingCartTotal();
         return;         
         }
     
@@ -90,7 +94,7 @@ function updateShoppingCartTotal(){
     shoppingCartItems.forEach(shoppingCartItems =>{
         const shoppingCartItemPriceElement = shoppingCartItems.querySelector('.shoppingCartItemPrice');
         // extraigo el precio del elemento y lo parseo (tambiem puedo usar Number)
-        const shoppingCartItemPrice = parseFloat( shoppingCartItemPriceElement.textContent.replace('€', ''));
+        const shoppingCartItemPrice = parseFloat( shoppingCartItemPriceElement.textContent.replace('$', ''));
 
         const shoppingCartItemQuantityElement = shoppingCartItems.querySelector('.shoppingCartItemQuantity');
         const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement.value);
@@ -98,7 +102,7 @@ function updateShoppingCartTotal(){
         total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
     });
     // Imprimo el total de los productos en el HTML
-    shoppingCartTotal.innerHTML = `${total.toFixed(2)} €`;
+    shoppingCartTotal.innerHTML = `${total.toFixed(2)} $`;
 }
 // elimino elementos y actualizo el valor total
 function removeShoppingCartItem(event){
@@ -110,5 +114,10 @@ function removeShoppingCartItem(event){
 function quantityChanged(event){
     const input = event.target;
     input.value <= 0 ? (input.value = 1) : null;
+    updateShoppingCartTotal();
+}
+// Boton Comprar - vacia el carrito
+function comprarButtonClicked(event){
+    shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
 }
