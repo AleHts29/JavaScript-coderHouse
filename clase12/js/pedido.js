@@ -23,7 +23,7 @@ function cargarEventos(){
 
     vaciarCarritoBtn.click( (e) => {carro.vaciarCarrito(e)});
 
-    document.addEventListener('DOMContentLoaded', carro.leerLocalStorage());
+    $(document).ready(carro.leerLocalStorage());
 
     procesarPedidoBtn.click( (e)=>{carro.procesarPedido(e)});
 }
