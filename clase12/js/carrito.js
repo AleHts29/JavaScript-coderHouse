@@ -134,4 +134,9 @@
     vaciarLocalStorage(){
         localStorage.clear();
     }
+
+    procesarPedido(e){
+        e.preventDefault();
+        location.href = "pages/formulario.html";
+    }
 }
