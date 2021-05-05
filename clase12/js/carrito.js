@@ -137,6 +137,18 @@
 
     procesarPedido(e){
         e.preventDefault();
-        location.href = "pages/formulario.html";
+        if(this.obtenerProductosLocalStorage().length === 0){
+            Swal.fire({
+                type: 'error',
+                title: 'Oops..',
+                text:'El carrito esta vacio, agregar productos',
+                timer: 2000,
+                showConfirmButton: false
+            })
+        }
+        else {
+            location.href = "pages/formulario.html";
+        }
+        
     }
 }
