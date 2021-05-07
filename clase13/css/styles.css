@@ -5,7 +5,7 @@
 body{
     color: #333;
     font-family: sans-serif;
-    background: rgba(0, 0, 0, 0.954);
+    background: rgba(0, 0, 0, 0.509);
     margin-top: 50px;
 }
 
@@ -71,3 +71,9 @@ h2{
     background: red;
     display: none;
 }
+.pricing-header{
+    font-family: sans-serif;
+    color: rgb(178, 226, 232);
+    display: none;
+}
+
