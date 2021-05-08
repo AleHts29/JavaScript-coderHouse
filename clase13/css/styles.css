@@ -73,7 +73,10 @@ h2{
 }
 .pricing-header{
     font-family: sans-serif;
-    color: rgb(178, 226, 232);
+    color: #F9E79F;
     display: none;
 }
 
+#lista-productos{
+    display: none;
+}
