@@ -80,3 +80,17 @@ h2{
 #lista-productos{
     display: none;
 }
+
+.faIn-JQ{
+    display: none;
+}
+
+
+.fadeTks-JQ{
+    font-family: sans-serif;
+    color: #F9E79F;
+    display: none;
+    text-align: center;
+    margin: auto;
+    padding: 50px;
+}

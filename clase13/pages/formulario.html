@@ -8,15 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="container">
-        <form autocomplete="off" id="miFormulario">
+    <div id="container" >
+        <div class="fadeTks-JQ"></div>
+        <form autocomplete="off" id="miFormulario" class="faIn-JQ">
             <h2>Ingrese datos de facturación</h2>
             <input type="text" placeholder="Nombre completo" id="nombre" ><br>
             <div id="mensaje1" class="error">Nombre no valido</div><br>
 
             <input type="email" placeholder="Usuario@ejemplo.com" id="email" ><br>
             <div id="mensaje2" class="error">e-mail no valido</div>
-            <input type="submit"  value="Enviar"  id="btn-enviar">
+            <input  type="submit"  value="Enviar"  id="btn-enviar">
 
             <div class="resultado"></div>
         </form>
@@ -28,7 +29,10 @@ src="https://code.jquery.com/jquery-3.6.0.js"
 integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 crossorigin="anonymous">
 </script>
-
+<script src="../js/eventos.js"></script>
 <script src="../js/formulario.js"></script>
+
+
+    
 </body>
 </html>
