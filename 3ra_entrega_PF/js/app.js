@@ -10,7 +10,7 @@ $("section").prepend('<button class="container  ml-5" id = "btn2"> Leo datos JSO
 
         for (const symbol of res){
             $(".infoFooter").prepend(`<div>
-                             <h3> <strong>${symbol.title}</strong></h3>
+                             <h3> Curso: <strong>${symbol.title}</strong></h3>
                              <h5>${symbol.desciption}</h5>
                              <p>Precio: USD ${symbol.price}$ </p>
                              </div>`);
